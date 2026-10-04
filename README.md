@@ -2,7 +2,7 @@
 
 I am a quantitative analyst/data scientist who builds and validates **credit risk and forecasting models**. Previously, I spent two years in economic research at the **Federal Reserve Bank of Boston**, building nowcasting and time-series models for monetary policy. Today I develop and validate probability-of-default and CECL models for banks.
 
-What I bring is both sides of modeling: building models, and knowing how they fail.
+I bring an understanding of both sides of modeling: building models, and knowing how they fail.
 
 ## Featured Projects
 
