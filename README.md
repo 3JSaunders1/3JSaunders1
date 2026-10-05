@@ -15,10 +15,12 @@ An end-to-end PD and expected loss framework on ~590K Lending Club loans, built 
 - **Key finding:** concept drift that input monitoring alone missed, driving a 14% expected-loss shortfall
 
 ### [Macro-Driven Credit Risk Lab](https://github.com/3JSaunders1/macro-credit-risk-lab)
-A stress-testing platform linking macroeconomic forecasts to default risk.
-- Five interchangeable forecasting models: VAR, Cholesky and sign-restricted SVARs, Bayesian VAR, and local projections
-- Probability-of-default scoring under baseline and stress scenarios
-- FastAPI service, interactive Streamlit dashboard, and automated tests
+A stress-testing platform linking macroeconomic scenarios to credit losses, validated the way a model risk team would.
+- Five forecasting models (VAR, Cholesky and sign-restricted SVARs, Bayesian VAR, and local projections), backtested out of sample against a random walk
+- A dynamic credit loss model on 40 years of FRED charge-off data, validated with conditional backtests through 2008 and COVID
+- A scenario engine propagating structural shocks through the Bayesian VAR into 9-quarter cumulative losses, compared against actual 2008 losses
+- FastAPI service, interactive Streamlit dashboard, and 64 automated tests in CI
+- **Key finding:** reviewing the platform like a validator, I found and corrected eight model errors; the loss model captured only two-thirds of 2008 losses, showing why
 
 ## Tools & Methods
 
