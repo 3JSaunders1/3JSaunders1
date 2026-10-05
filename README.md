@@ -20,7 +20,7 @@ A stress-testing platform linking macroeconomic scenarios to credit losses, vali
 - A dynamic credit loss model on 40 years of FRED charge-off data, validated with conditional backtests through 2008 and COVID
 - A scenario engine propagating structural shocks through the Bayesian VAR into 9-quarter cumulative losses, compared against actual 2008 losses
 - FastAPI service, interactive Streamlit dashboard, and 64 automated tests in CI
-- **Key finding:** reviewing the platform like a validator, I found and corrected eight model errors; the loss model captured only two-thirds of 2008 losses, showing why
+- **Key finding:** reviewing the platform like a validator, I found and corrected eight model errors; the loss model captured only two-thirds of 2008 losses, showing why severe scenarios need overlays
 
 ## Tools & Methods
 
