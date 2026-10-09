@@ -1,4 +1,4 @@
-# Hi, I'm John 👋
+# Hi all, my name is John 👋
 
 **Quantitative analyst and data scientist** building and validating credit risk and macroeconomic models.
 
