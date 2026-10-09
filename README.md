@@ -1,32 +1,45 @@
-# Hello all,
+# Hi, I'm John 👋
 
-I am a quantitative analyst/data scientist who builds and validates **credit risk and forecasting models**. Previously, I spent two years in economic research at the **Federal Reserve Bank of Boston**, building nowcasting and time-series models for monetary policy. Today I develop and validate probability-of-default and CECL models for banks.
+**Quantitative analyst and data scientist** building and validating credit risk and macroeconomic models.
 
-I bring an understanding of both sides of modeling: building models, and knowing how they fail.
+- Currently developing challenger credit risk models and validating banks' CECL models at a public accounting firm
+- Previously a Senior Research Associate at the **Federal Reserve Bank of Boston**, building forecasting and nowcasting models for monetary policy
 
-## Featured Projects
+I care about models that hold up out of sample: validated against benchmarks, monitored for drift, and engineered to be reproducible.
 
-### [Credit Default Prediction Model](https://github.com/3JSaunders1/credit-default-model)
-An end-to-end PD and expected loss framework on ~590K Lending Club loans, built and validated the way a bank would.
-- Logistic regression, monotonic XGBoost, and a Weight of Evidence scorecard, with out-of-time validation
-- Expected loss (PD × LGD × EAD) validated against realized losses
-- Quarterly PSI and calibration monitoring, SHAP reason codes, and FRED macro features joined in SQL
-- PySpark pipeline reconciled against SQL at 1M+ rows, with 42 automated tests in CI
-- **Key finding:** concept drift that input monitoring alone missed, driving a 14% expected-loss shortfall
+---
 
-### [Macro-Driven Credit Risk Lab](https://github.com/3JSaunders1/macro-credit-risk-lab)
-A stress-testing platform linking macroeconomic scenarios to credit losses, validated the way a model risk team would.
-- Five forecasting models (VAR, Cholesky and sign-restricted SVARs, Bayesian VAR, and local projections), backtested out of sample against a random walk
-- A dynamic credit loss model on 40 years of FRED charge-off data, validated with conditional backtests through 2008 and COVID
-- A scenario engine propagating structural shocks through the Bayesian VAR into 9-quarter cumulative losses, compared against actual 2008 losses
-- FastAPI service, interactive Streamlit dashboard, and 64 automated tests in CI
-- **Key finding:** reviewing the platform like a validator, I found and corrected eight model errors; the loss model captured only two-thirds of 2008 losses, showing why severe scenarios need overlays
+## Projects
 
-## Tools & Methods
+### 🔗 [Credit Risk Platform](https://github.com/3JSaunders1/credit-risk-platform)
+An integrated stress-testing platform linking my two projects below: macroeconomic scenarios flow through loan-level PDs into portfolio expected losses (PD × LGD × EAD).
+- Stressed losses for a **$3.62B, 283,000-loan portfolio**, from $238.6M at baseline to $322.2M under a severe recession
+- **Data contracts** and **enforced temporal integrity** (no look-ahead), validated end to end
+- The portfolio's actual 2015 loss lands almost exactly on the Adverse scenario
+- Streamlit dashboard, Docker, 18 tests in CI
 
-**Languages and tools:** Python · SQL · PySpark · R · MATLAB · Git · GitHub Actions
-**Modeling:** logistic regression · gradient boosting · WoE scorecards · expected loss · time-series econometrics · calibration and drift monitoring · explainability
+### 📉 [Credit Default Prediction Model](https://github.com/3JSaunders1/credit-default-model)
+A bank-style probability of default and expected loss model on ~590,000 Lending Club loans.
+- Logistic regression, XGBoost, monotonic XGBoost, and a WoE scorecard, validated **out of time**
+- Found **concept drift that input monitoring missed:** stable inputs (PSI 0.001), failing calibration
+- Expected loss validated against **$274M of realized losses**, with the gap traced to default frequency
+- SQL and PySpark pipelines reconciled across 1M+ loans, Docker, logging, 49 tests in CI
 
-## Connect
+### 🌐 [Macro-Driven Credit Risk Lab](https://github.com/3JSaunders1/macro-credit-risk-lab)
+A macro stress-testing platform: five forecasting models feeding a dynamic credit loss model.
+- VAR, Cholesky and sign-restricted SVARs, a Minnesota-prior **Bayesian VAR**, and local projections
+- Backtested out of sample against a random walk, with Diebold-Mariano tests
+- Dynamic loss model validated through **2008 and COVID**; eight model errors found and corrected in review
+- FastAPI service, Streamlit dashboard, Docker Compose, 67 tests in CI
 
-[LinkedIn](https://www.linkedin.com/in/john-saunders-03a650260/)
+---
+
+## Tools
+
+**Languages and data:** Python · SQL · R · PySpark · DuckDB · pandas · NumPy
+**Modeling:** scikit-learn · XGBoost · statsmodels · SciPy · SHAP
+**Engineering:** Docker · FastAPI · Streamlit · pytest · GitHub Actions · Make · Git
+
+---
+
+📫 Reach me on [LinkedIn][(https://www.linkedin.com/in/john-saunders-03a650260/)]
